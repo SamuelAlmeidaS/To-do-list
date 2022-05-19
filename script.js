@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
         e.preventDefault();
 
         const task = input.value;
-        
+
         if(!task) {
             alert("Crie uma tarefa!");
             return;
@@ -59,6 +59,10 @@ window.addEventListener('load', () => {
             task_input_el.setAttribute("readonly", "readonly");
             task_edit_el.innerText = "Editar"
          }
+        });
+
+        task_delete_el.addEventListener('click', () => {
+            list_el.removeChild(task_el);
         });
     });
 });
