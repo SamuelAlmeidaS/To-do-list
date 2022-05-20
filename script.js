@@ -18,15 +18,14 @@ window.addEventListener('load', () => {
 
         const task_content_el = document.createElement("div");
         task_content_el.classList.add("content");
-        task_content_el.innerText = task; 
 
         task_el.appendChild(task_content_el);
 
         const task_input_el = document.createElement("input");
-        task_content_el.classList.add("text");
-        task_content_el.type = "text";
-        task_content_el.value = task;
-        task_content_el.setAttribute("readonly", "readonly");
+        task_input_el.classList.add("text");
+        task_input_el.type = "text";
+        task_input_el.value = task;
+        task_input_el.setAttribute("readonly", "readonly");
 
         task_content_el.appendChild(task_input_el);
 
@@ -51,14 +50,14 @@ window.addEventListener('load', () => {
         input.value = "";
 
         task_edit_el.addEventListener('click', () => {
-         if(task_edit_el.innerText.toLowerCase() == "edit"){
-            task_input_el.removeAttribute("readonly");
-            task_input_el.focus();
-            task_edit_el.innerText = "Salvar";
-         } else {
-            task_input_el.setAttribute("readonly", "readonly");
-            task_edit_el.innerText = "Editar"
-         }
+            if(task_edit_el.innerText.toLowerCase() == "editar") {
+                task_input_el.removeAttribute("readonly");
+                task_input_el.focus();
+                task_edit_el.innerText = "Salvar";
+            }else{
+                task_input_el.setAttribute("readonly", "readonly");
+                task_edit_el.innerText = "Editar";
+            }
         });
 
         task_delete_el.addEventListener('click', () => {
